@@ -1,0 +1,20 @@
+service: gbduro-leaderboard-update
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.7
+  lambdaHashingVersion: 20201221
+  stage: prod
+  region: eu-west-2
+
+functions:
+  update:
+    handler: leaderboard.lambda_wrapper
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    pythonBin: python3
